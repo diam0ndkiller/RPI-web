@@ -1,0 +1,12 @@
+[Unit]
+Description=RPI iftop network monitoring service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/home/diam0ndkiller/iftop-rpi-service.sh &
+ExecStop=pkill /home/diam0ndkiller/iftop-rpi-service.sh
+
+[Install]
+WantedBy=multi-user.target
