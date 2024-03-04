@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			@import "../style/top.css";
+		</style>
+		<script>
+			var parentUrl = ""
+			var currentPath = ""
+			
+			window.addEventListener('message', function (event) {				
+				if (event.data.parentUrl != undefined) {
+					parentUrl = event.data.parentUrl
+					currentPath = parentUrl.split("#")[0].split("?")[0]
+					theme = "light"
+					if (parentUrl.search("=") != -1) {
+						params = parentUrl.split("?")[1]
+						if (params.search("theme=") != -1) {
+							theme = params.split("theme=")[1].split("&")[0]
+						}
+					}
+					console.log(currentPath)
+					document.getElementById("wifi").href += "?theme=" + theme
+					document.getElementById("main").href += "?theme=" + theme
+					document.getElementById("rpi").href += "?theme=" + theme
+					document.getElementById("logout").href += "&theme=" + theme
+					var activeTab = "main";
+					if (currentPath.search("wifi") != -1) activeTab = "wifi"
+					activeTabElement = document.getElementById(activeTab).classList.add("active-tab")
+					activeTabTdElement = document.getElementById(activeTab + "-td").classList.add("active-tab-td")
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="top-navigation config-background">
+			<table cellspacing="0px" class="top-navigation">
+				<tr>
+					<td id="main-td" align="center" style="width: 10%;">
+						<a id="main" href="index.php" target="_parent" class="tab">Home</a>
+					</td>
+					<td id="wifi-td" align="center" style="width: 10%;">
+						<a id="wifi" href="wifi/index.php" target="_parent" class="tab">WLAN</a>
+					</td>
+					<td></td>
+					<td width="50%" align="center" class="server-location"><a href="../" target="_parent" id="rpi" class="tab server-location">rpi</a>/config/</td>
+					<td width="200px" align="right"><a href="login.php?logout=" target="_parent" class="logout" id="logout">Logout</a></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

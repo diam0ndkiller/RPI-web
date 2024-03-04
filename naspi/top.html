@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			@import "../style/top.css";
+		</style>
+		<script>
+			var parentUrl = ""
+			var currentPath = ""
+			
+			window.addEventListener('message', function (event) {				
+				if (event.data.parentUrl != undefined) {
+					parentUrl = event.data.parentUrl
+					currentPath = parentUrl.split("#")[0].split("?")[0]
+					theme = "light"
+					if (parentUrl.search("=") != -1) {
+						params = parentUrl.split("?")[1]
+						if (params.search("theme=") != -1) {
+							theme = params.split("theme=")[1].split("&")[0]
+						}
+					}
+					console.log(currentPath)
+					document.getElementById("main").href += "?theme=" + theme
+					document.getElementById("player").href += "?theme=" + theme
+					var activeTab = "main";
+					activeTabElement = document.getElementById(activeTab).classList.add("active-tab")
+					activeTabTdElement = document.getElementById(activeTab + "-td").classList.add("active-tab-td")
+				}
+			});
+		</script>
+	</head>
+	<body margin="0px">
+		<div class="top-navigation naspi-background">
+			<table cellspacing="0px" class="top-navigation">
+				<tr>
+					<td id="main-td" align="center" style="width: 10%;">
+						<a id="main" href="index.php" target="_parent" class="tab">Home</a>
+					</td>
+					<td id="player-td" align="center" style="width: 20%;">
+						<a id="player" href="player.php" target="_parent" class="tab">Media Player</a>
+					</td>
+					<td align="center" class="server-location"><a href="../" target="_parent" class="tab server-location">rpi</a>/naspi/</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

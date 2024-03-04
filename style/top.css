@@ -1,0 +1,15 @@
+body {font-family: Arial, Helvetica, sans-serif; text-decoration: none; margin: 0px}
+div.top-navigation {height: 45px; margin: 0px; padding: 0px; position: absolute; top: 0; left: 0; width: 100%;}
+div.config-background {background-image: linear-gradient(#ff0000, #000088)}
+div.rpi-background {background-image: linear-gradient(#ff2277, #880000)}
+div.naspi-background {background-image: linear-gradient(#0088ff, #000088)}
+table.top-navigation {width: 100%; height: 100%; vertical-align: middle; border: 0px solid black;}
+.tab {font-size: 25px; font-weight: lighter; text-decoration: none; font-family: Arial, Helvetica, sans-serif; color: #cccccc;}
+a.tab:hover, a.tab:visited:hover {text-decoration: underline; font-weight: bold; color: #ffffff;}
+a.tab:active, a.tab:visited:active {text-decoration: underline; font-weight: bold; color: #cccccc;}
+a.tab:visited {text-decoration: none; font-weight: normal; color: #cccccc;}
+.server-location, a.server-location:visited, a.server-location:active {font-size: 25px; color: #ffffffaa; font-weight: bold}
+.active-tab, a.active-tab:visited {color: #ffffff; font-weight: bold;}
+.active-tab-td {background-color: #32323232}
+.logout {font-size: 20px; color: #aaaaaa; margin-right: 10px; text-decoration: none;}
+a.logout:hover, a.logout:visited:hover {text-decoration: underline;}

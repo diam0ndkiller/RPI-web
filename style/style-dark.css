@@ -1,0 +1,31 @@
+body {font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: #aaaaaa; background-color: #323232}
+a {text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #aaaaaa;}
+a.title {text-decoration: none; font-family: Arial, Helvetica, sans-serif; font-style: italic; color: #aaaaaa;}
+a:hover, a:visited:hover {color: #ff8888; text-decoration: underline}
+a:active, a:visited:active {color: #ff8888; text-decoration: none;}
+a:visited {color: #aaaaaa; text-decoration: none;}
+
+button, input, textarea {background-color: #222222; color: #aaaaaa; border: solid black 1px;}
+
+a.path {font-weight: normal; font-style: italic;}
+a.path:hover, a.path:active, a.path:visited:hover, a.path:visited:active {color: blue;}
+
+p, ol, ul {margin-left: 0px; margin-top: 10px; margin-right: 0px; margin-bottom: 0px;}
+
+ul.first {list-style-type: circle; padding: 0px; margin: 0px; margin-left: 0px;}
+ul.second {list-style-type: disc; padding: 0px; margin: 0px; margin-left: 20px;}
+ul.third {list-style-type: square; padding: 0px; margin: 0px; margin-left: 10px;}
+
+h1.title {font-size: 36px; font-weight: bold; margin-left: 0px; margin-bottom: 12px; margin-top: 0px;}
+h2.title {font-size: 34px; font-weight: bold; margin-left: 0px; margin-bottom: 10px; margin-top: 20px;}
+h3.title {font-size: 32px; font-weight: bold; margin-left: 0px; margin-bottom: 8px; margin-top: 20px;}
+h4.title {font-size: 30px; font-weight: bold; margin-left: 0px; margin-bottom: 6px; margin-top: 20px;}
+h5.title {font-size: 28px; font-weight: bold; margin-left: 0px; margin-bottom: 4px; margin-top: 20px;}
+h6.title {font-size: 26px; font-weight: bold; margin-left: 0px; margin-bottom: 2px; margin-top: 20px;}
+h7.title {font-size: 24px; font-weight: bold; margin-left: 0px; margin-bottom: 0px; margin-top: 20px;}
+.subtitle {font-size: 20px}
+.content {font-size: 15px}
+
+.paddingBetweenCols td {
+  padding-right: 5px;
+}

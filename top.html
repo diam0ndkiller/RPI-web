@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+			@import "style/top.css";
+		</style>
+		<script>
+			var parentUrl = ""
+			var currentPath = ""
+			
+			window.addEventListener('message', function (event) {				
+				if (event.data.parentUrl != undefined) {
+					parentUrl = event.data.parentUrl
+					currentPath = parentUrl.split("#")[0].split("?")[0]
+					theme = "light"
+					if (parentUrl.search("=") != -1) {
+						params = parentUrl.split("?")[1]
+						if (params.search("theme=") != -1) {
+							theme = params.split("theme=")[1].split("&")[0]
+						}
+					}
+					console.log(currentPath)
+					document.getElementById("config").href += "?theme=" + theme
+					document.getElementById("main").href += "?theme=" + theme
+					document.getElementById("naspi").href += "?theme=" + theme
+					document.getElementById("moviedb").href += "?theme=" + theme
+					var activeTab = "main";
+					activeTabElement = document.getElementById(activeTab).classList.add("active-tab")
+					activeTabTdElement = document.getElementById(activeTab + "-td").classList.add("active-tab-td")
+				}
+			});
+		</script>
+	</head>
+	<body margin="0px">
+		<div class="top-navigation rpi-background">
+			<table cellspacing="0px" class="top-navigation">
+				<tr>
+					<td id="main-td" align="center" style="width: 10%;">
+						<a id="main" href="./" target="_parent" class="tab">Home</a>
+					</td>
+					<td id="naturemat-td" align="center" style="width: 15%;">
+						<a id="naturemag" href="naturemag/en/home/" target="_parent" class="tab">naturemag/</a>
+					</td>
+					<td id="naspi-td" align="center" style="width: 10%;">
+						<a id="naspi" href="naspi/" target="_parent" class="tab">naspi/</a>
+					</td>
+					<td id="moviedb-td" align="center" style="width: 10%;">
+						<a id="moviedb" href="moviedb/" target="_parent" class="tab">moviedb/</a>
+					</td>
+					<td id="config-td" align="center" style="width: 15%;">
+						<a id="config" href="config/" target="_parent" class="tab">config/</a>
+					</td>
+					<td width="30%" align="center" class="server-location">rpi/</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
