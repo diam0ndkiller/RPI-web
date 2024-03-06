@@ -24,6 +24,7 @@
 					document.getElementById("main").href += "?theme=" + theme
 					document.getElementById("player").href += "?theme=" + theme
 					var activeTab = "main";
+					if (currentPath.search("wifi") != -1) activeTab = "wifi"
 					activeTabElement = document.getElementById(activeTab).classList.add("active-tab")
 					activeTabTdElement = document.getElementById(activeTab + "-td").classList.add("active-tab-td")
 				}
