@@ -1,0 +1,2 @@
+WWW-DATA ALL=(ALL) NOPASSWD: /var/www/html/config/sudoscript.py
+WWW-DATA ALL=(ALL) NOPASSWD: /var/www/html/naspi/sudoscript.py
