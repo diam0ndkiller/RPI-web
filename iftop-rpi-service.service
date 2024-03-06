@@ -5,8 +5,8 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-ExecStart=/home/diam0ndkiller/iftop-rpi-service.sh &
-ExecStop=pkill /home/diam0ndkiller/iftop-rpi-service.sh
+ExecStart=/var/www/html/config/iftop-rpi-service.sh &
+ExecStop=pkill /var/www/html/config/iftop-rpi-service.sh
 
 [Install]
 WantedBy=multi-user.target
