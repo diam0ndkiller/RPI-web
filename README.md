@@ -1,7 +1,7 @@
 # RPI-web
 Web Page for a Raspberry Pi with hostapd and smb
 
-New `installer.sh`!!! It does basically the same as below. Run it as root. After install, you will have to go through the `config/sudoscript.py` and replace wifi interface names though.
+New `installer.sh`!!! It does basically the same as below. Run it as root. After install, you will have to go through the `config/sudoscript.py` and `config/iftop-rpi-service.sh` and replace wifi interface names though.
 
 This is a collection of web pages to be run on a Raspberry Pi. It has built-in `apache2` configuration, so use Apache as the web server. It also includes configuration for `hostapd`, `dnsmasq` and `dhcpcd`. In my setup, my Raspberry Pi is running as a WiFi access point, so that is my main router interface. This web page also supports `smb` configuration and built-in access to a NAS directory. To use that feature, create a folder called `share` anywhere on your system and link it to the `naspi` directory of this page.
 
