@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo apt install apache2 php iftop
+sudo apt install apache2 php iftop libapache2-mod-php
+sudo service apache2 start
 
 cp -r ../RPI-Web /var/www/
 cd /var/www/
@@ -16,6 +17,7 @@ cp html/www-data /etc/sudoers.d/
 
 systemctl daemon-reload
 systemctl enable iftop-rpi-daemon
+systemctl enable apache2
 
 chmod +777 -R html/
 chmod +777 sessions.txt
