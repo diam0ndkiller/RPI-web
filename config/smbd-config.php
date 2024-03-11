@@ -72,7 +72,7 @@
 							<?php
 								if(isset($_POST['restart'])) {
 									shell_exec("sudo -S ./sudoscript.py restart-service apache2 2>&1");
-									echo "<p class='content' style='color: #00aa00; margin: 0px;'> Successfully restarted <tt>apache2</tt></p>";
+									echo "<p class='content' style='color: #00aa00; margin: 0px;'> Successfully restarted <tt>smbd</tt></p>";
 								}
 							?>
 						</td>
