@@ -107,9 +107,11 @@
 								?>
 							</td>
 							<td width="100px">
-								<input type="submit" value="Update iptables-Policies" name="update" id="update">
-								<input type="submit" value="Disable" name="disable" id="disable">
-								<input type="submit" value="Enable" name="enable" id="enable">
+								<nobr>
+									<input type="submit" value="Update iptables-Policies" name="update" id="update">
+									<input type="submit" value="Disable" name="disable" id="disable">
+									<input type="submit" value="Enable" name="enable" id="enable">
+								</nobr>
 							</td>
 						</tr>
 					</table>
