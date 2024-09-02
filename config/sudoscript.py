@@ -118,6 +118,9 @@ elif command == "enable-allow-ips":
 elif command == "disable-allow-ips":
 	subprocess.run("sudo iptables -F FORWARD && sudo netfilter-persistent save")
 
+elif command == "get-iptables-forward-rules":
+	os.system("sudo iptables -S FORWARD")
+
 elif command == "add-allow-ip":
 	os.system("echo >> /etc/allowed-devices.txt")
 	allowed_ips = [sys.argv[2]]
