@@ -57,6 +57,12 @@
 							}
 							shell_exec("sudo -S ../sudoscript.py allow-iptables");
 						}
+						if(isset($_POST['disable'])) {
+							shell_exec("sudo -s ../sudoscript.py disable-allow-ips");
+						}
+						if(isset($_POST['enable'])) {
+							shell_exec("sudo -s ../sudoscript.py enable-allow-ips");
+						}
 						$str = shell_exec("sudo -S ../sudoscript.py get-active-ips 2>&1");
 						$clients = explode("\n", $str);
 						echo "<table style=\"width:50%; background-color: #323232; color: #aaaaaa; border: 1px solid black;\"><thead style=\"font-weight:bold;\"><td>IP</td><td>Name</td><td>Status</td><td>Unlocked</td></thead>";
@@ -79,11 +85,24 @@
 					?>
 					<table width="100%" style="margin-top: 10px; text-align: right">
 						<tr>
-							<td width="*"></td>
+							<td width="*">
+								<pre>
+									<?php
+										$str = shell_exec("sudo -S ../sudoscript.py get-iptables-forward-rules 2>&1");
+										echo "$str";
+									?>
+								</pre>
+							</td>
 							<td>
 								<?php
 									if(isset($_POST['update'])) {
 										echo "<p class='content' style='color: #00aa00; margin: 0px;'> Successfully updated <tt>iptables</tt>-policies</p>";
+									}
+									if(isset($_POST['enable'])) {
+										echo "<p class='content' style='color: #00aa00; margin: 0px;'> Successfully enabled <tt>iptables</tt> client blocking</p>";
+									}
+									if(isset($_POST['disable'])) {
+										echo "<p class='content' style='color: #00aa00; margin: 0px;'> Successfully disabled <tt>iptables</tt> client blocking</p>";
 									}
 								?>
 							</td>
