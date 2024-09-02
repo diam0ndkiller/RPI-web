@@ -113,10 +113,10 @@ elif command == "allow-iptables":
 	subprocess.run("sudo /var/www/html/config/wifi/allow-iptables.sh", shell=True)
 
 elif command == "enable-allow-ips":
-	subprocess.run("sudo iptables -A FORWARD -j ALLOWED_DEVICES && sudo netfilter-persistent save")
+	subprocess.run("sudo iptables -A FORWARD -j ALLOWED_DEVICES && sudo netfilter-persistent save", shell=True)
 
 elif command == "disable-allow-ips":
-	subprocess.run("sudo iptables -F FORWARD && sudo netfilter-persistent save")
+	subprocess.run("sudo iptables -F FORWARD && sudo netfilter-persistent save", shell=True)
 
 elif command == "get-iptables-forward-rules":
 	os.system("sudo iptables -S FORWARD")
