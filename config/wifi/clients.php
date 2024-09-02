@@ -58,10 +58,10 @@
 							shell_exec("sudo -S ../sudoscript.py allow-iptables");
 						}
 						if(isset($_POST['disable'])) {
-							shell_exec("sudo -s ../sudoscript.py disable-allow-ips");
+							shell_exec("sudo -S ../sudoscript.py disable-allow-ips");
 						}
 						if(isset($_POST['enable'])) {
-							shell_exec("sudo -s ../sudoscript.py enable-allow-ips");
+							shell_exec("sudo -S ../sudoscript.py enable-allow-ips");
 						}
 						$str = shell_exec("sudo -S ../sudoscript.py get-active-ips 2>&1");
 						$clients = explode("\n", $str);
