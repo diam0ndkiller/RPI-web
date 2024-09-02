@@ -85,14 +85,14 @@
 					?>
 					<table width="100%" style="margin-top: 10px; text-align: right">
 						<tr>
-							<td width="*">
-								<pre>
-									<?php
-										$str = shell_exec("sudo -S ../sudoscript.py get-iptables-forward-rules 2>&1");
-										echo "$str";
-									?>
-								</pre>
-							</td>
+                                                        <td width="*" style="text-align: center;">
+                                                                <pre>
+<?php
+                                                                                $str = shell_exec("sudo -S ../sudoscript.py get-iptables-forward-rules 2>&1");
+                                                                                echo "$str";
+                                                                        ?>
+                                                                </pre>
+
 							<td>
 								<?php
 									if(isset($_POST['update'])) {
