@@ -112,6 +112,12 @@ elif command == "network-traffic":
 elif command == "allow-iptables":
 	subprocess.run("sudo /var/www/html/config/wifi/allow-iptables.sh", shell=True)
 
+elif command == "enable-allow-ips":
+	subprocess.run("sudo iptables -A FORWARD -j ALLOWED_DEVICES && sudo netfilter-persistent save")
+
+elif command == "disable-allow-ips":
+	subprocess.run("sudo iptables -F FORWARD && sudo netfilter-persistent save")
+
 elif command == "add-allow-ip":
 	os.system("echo >> /etc/allowed-devices.txt")
 	allowed_ips = [sys.argv[2]]
